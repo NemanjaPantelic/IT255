@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function validateForm() {
+            var t1 = parseFloat(document.forms["myForm"]["test01"].value);
+            var t2 = parseFloat(document.forms["myForm"]["test02"].value);
+            var t3 = parseFloat(document.forms["myForm"]["test03"].value);
+            var t4 = parseFloat(document.forms["myForm"]["test04"].value);
+            var t5 = parseFloat(document.forms["myForm"]["test05"].value);
+
+            var dz01 = parseFloat(document.forms["myForm"]["dz01"].value);
+            var dz02 = parseFloat(document.forms["myForm"]["dz02"].value);
+            var dz03 = parseFloat(document.forms["myForm"]["dz03"].value);
+            var dz04 = parseFloat(document.forms["myForm"]["dz04"].value);
+            var dz05 = parseFloat(document.forms["myForm"]["dz05"].value);
+            var dz06 = parseFloat(document.forms["myForm"]["dz06"].value);
+            var dz07 = parseFloat(document.forms["myForm"]["dz07"].value);
+            var dz08 = parseFloat(document.forms["myForm"]["dz08"].value);
+            var dz09 = parseFloat(document.forms["myForm"]["dz09"].value);
+            var dz10 = parseFloat(document.forms["myForm"]["dz10"].value);
+            var dz11 = parseFloat(document.forms["myForm"]["dz11"].value);
+            var dz12 = parseFloat(document.forms["myForm"]["dz12"].value);
+            var dz13 = parseFloat(document.forms["myForm"]["dz13"].value);
+            var dz14 = parseFloat(document.forms["myForm"]["dz14"].value);
+            var dz15 = parseFloat(document.forms["myForm"]["dz15"].value);
+
+            var projekat = parseFloat(document.forms["myForm"]["prj"].value);
+            var zalaganje = parseFloat(document.forms["myForm"]["zalaganje"].value);
+
+            var ukupno = t1 + t2 + t3 + t4 + t5 + dz01 + dz02 + dz03 + dz05 + dz06 + dz07 + dz08 + dz09 + dz10 + dz11 + dz12 + dz13 + dz14 + dz15 + projekat + zalaganje;
+
+            if (ukupno < 35) {
+                var message = "Imate manje od potrebnih bodova " + ukupno + "/35";
+                alert(message);
+            } else {
+                var message = "Ispunili ste uslov za predispitne obaveze " + ukupno + "/35";
+                alert(message);
+            }
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <div class="form-style-10">
+        <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+            <h1>Kalkulator bodova</h1>
+            <br>
+            <div class="section"><span>1</span>Testovi</div>
+            <div class="inner-wrap">
+                <br>Test 01:
+                <input type="number" step="0.01" name="test01" value=0> / 1.5
+                <br>Test 02:
+                <input type="number" step="0.01" name="test02" value=0> / 1.5
+                <br>Test 03:
+                <input type="number" step="0.01" name="test03" value=0> / 1.5
+                <br>Test 04:
+                <input type="number" step="0.01" name="test04" value=0> / 1.5
+                <br>Test 05:
+                <input type="number" step="0.01" name="test05" value=0> / 1.5
+            </div>
+            <div class="section"><span>2</span>Domaci zadaci</div>
+            <div class="inner-wrap">
+                <br> DZ01:
+                <input type="number" step="0.01" name="dz01" value=0> / 1.5 &nbsp;&nbsp;DZ02:
+                <input type="number" step="0.01" name="dz02" value=0> / 1.5 &nbsp;&nbsp;DZ03:
+                <input type="number" step="0.01" name="dz03" value=0> / 1.5 &nbsp;&nbsp;DZ04:
+                <input type="number" step="0.01" name="dz04" value=0> / 1.5 &nbsp;&nbsp;DZ05:
+                <input type="number" step="0.01" name="dz05" value=0> / 1.5
+                <br> DZ06:
+                <input type="number" step="0.01" name="dz06" value=0> / 1.5 &nbsp;&nbsp;DZ07:
+                <input type="number" step="0.01" name="dz07" value=0> / 1.5 &nbsp;&nbsp;DZ08:
+                <input type="number" step="0.01" name="dz08" value=0> / 1.5 &nbsp;&nbsp;DZ09:
+                <input type="number" step="0.01" name="dz09" value=0> / 1.5 &nbsp;&nbsp;DZ10:
+                <input type="number" step="0.01" name="dz10" value=0> / 1.5
+                <br> DZ11:
+                <input type="number" step="0.01" name="dz11" value=0> / 1.5 &nbsp;&nbsp;DZ12:
+                <input type="number" step="0.01" name="dz12" value=0> / 1.5 &nbsp;&nbsp;DZ13:
+                <input type="number" step="0.01" name="dz13" value=0> / 1.5 &nbsp;&nbsp;DZ14:
+                <input type="number" step="0.01" name="dz14" value=0> / 1.5 &nbsp;&nbsp;DZ15:
+                <input type="number" step="0.01" name="dz15" value=0> / 1.5
+            </div>
+            <div class="section"><span>3</span>Projekat i zalaganje</div>
+            <div class="inner-wrap">
+                <br> Projekat:
+                <input type="number" step="0.01" name="prj" value=0> / 30.0
+                <br> Zalaganje:
+                <input type="number" step="0.01" name="zalaganje" value=0> / 10.0
+                <br>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
