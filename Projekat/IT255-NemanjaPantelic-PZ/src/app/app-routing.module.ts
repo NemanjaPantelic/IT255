@@ -7,8 +7,8 @@ import { ModelsComponent } from './models/models.component';
 const routes: Routes = [
 {path:'makes', component: MakesComponent},
 {path:'models', component: ModelsComponent},
-{path:'models/:id', component: ModelsComponent},
-{path:'models/:id/:year', component: ModelsComponent}
+{path:'models/:name/:id', component: ModelsComponent},
+{path:'models/:name/:id/:year', component: ModelsComponent}
 ];
 
 @NgModule({

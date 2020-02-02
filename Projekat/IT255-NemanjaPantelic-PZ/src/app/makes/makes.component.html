@@ -3,7 +3,7 @@ Choose a year: <input type="number" [formControl]="ModelsYear" min="1941" max="2
 <div *ngFor="let make of makes" class="cardTiles">
 	
   	  <div class="card-container">
-  	  	<a class="card" target="_blank" rel="noopener" [routerLink]="ModelsYear.value ? ['/models', make.make_id, ModelsYear.value] : ['/models', make.make_id]">
+  	  	<a class="card" rel="noopener" [routerLink]="ModelsYear.value ? ['/models', make.make_display ,make.make_id, ModelsYear.value] : ['/models', make.make_display, make.make_id]">
     	<div class="card card-small" tabindex="0">
         
         <div *ngIf="make.make_is_common == 0">

@@ -17,10 +17,12 @@ export class ApiService {
   }
 
   public getModels(make: String){
+    console.log(`https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getModels&make=` + make);
   	return this.httpClient.get(`https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getModels&make=` + make,{responseType: 'text' as 'json'});
   }
 
   public getModelsWYear(make: String, year: String){
+    console.log(`https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getModels&make=` + make + `&year=` + year);
   	return this.httpClient.get(`https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getModels&make=` + make + `&year=` + year,{responseType: 'text' as 'json'});
   }
   
