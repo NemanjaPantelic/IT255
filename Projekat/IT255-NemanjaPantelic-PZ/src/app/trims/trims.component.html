@@ -1,29 +1,32 @@
 <form [formGroup]="modelForm">
-  <select formControlName="make">
+  Make
+  <select formControlName="make" class="browser-default custom-select">
     <option disabled>Select Make</option>
     <option>None</option>
     <option *ngFor="let make of makes" id="{{make.make_id}}">{{make.make_display}}</option>
   </select>
-
+  Model
   <select formControlName="model">
     <option disabled>Select Model</option>
     <option>All</option>
     <option *ngFor="let model of models">{{model.model_name}}</option>
   </select>
 
-
+  Year
   <select formControlName="year">
     <option disabled>Select Year</option>
     <option>All</option>
     <option *ngFor="let yearOption of years">{{yearOption}}</option>
   </select>
 
+  Body Type
   <select formControlName="body">
     <option disabled>Select Body Type</option>
       	 <option>All</option>
     <option *ngFor="let bodyOption of bodyTypes">{{bodyOption}}</option>
   </select>
 
+  Fuel Type
     <select formControlName="fuel">
     <option disabled>Select Fuel Type</option>
     <option>All</option>
@@ -47,7 +50,7 @@
             <br>Year: {{trim.model_year}}
             <br>Body Type: {{trim.model_body}}
             
-            <br>Engine: {{trim.model_engine_fuel}}
+            <br>Fuel Type: {{trim.model_engine_fuel}}
             <br>Engine Volume: {{trim.model_engine_cc}} cc
             <br>Drive: {{trim.model_drive}}
             <br>Transmission: {{trim.model_transmission_type}}

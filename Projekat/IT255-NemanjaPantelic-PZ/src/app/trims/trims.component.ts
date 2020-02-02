@@ -145,6 +145,8 @@ export class TrimsComponent implements OnInit {
 
               this.setParams();
 
+              this.modelParam = null;
+
               this.apiService.getTrims(this.makeParam ,this.modelParam,this.yearParam, this.bodyParam,this.fuelParam,this.minPParam,this.maxPParam).subscribe((data)=>{
                       var dataSubstring = data.substring(2,data.length-2);
                       var makesRespose = JSON.parse(dataSubstring);
