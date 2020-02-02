@@ -1,0 +1,60 @@
+<form [formGroup]="modelForm">
+  <select formControlName="make">
+    <option disabled>Select Make</option>
+    <option>None</option>
+    <option *ngFor="let make of makes" id="{{make.make_id}}">{{make.make_display}}</option>
+  </select>
+
+  <select formControlName="model">
+    <option disabled>Select Model</option>
+    <option>All</option>
+    <option *ngFor="let model of models">{{model.model_name}}</option>
+  </select>
+
+
+  <select formControlName="year">
+    <option disabled>Select Year</option>
+    <option>All</option>
+    <option *ngFor="let yearOption of years">{{yearOption}}</option>
+  </select>
+
+  <select formControlName="body">
+    <option disabled>Select Body Type</option>
+      	 <option>All</option>
+    <option *ngFor="let bodyOption of bodyTypes">{{bodyOption}}</option>
+  </select>
+
+    <select formControlName="fuel">
+    <option disabled>Select Fuel Type</option>
+    <option>All</option>
+    <option *ngFor="let fuelOption of fuels">{{fuelOption}}</option>
+  </select>
+
+  Enter minmum power: <input type="number" formControlName="minP" min="1" max="10000">
+
+  Enter maximum power: <input type="number" formControlName="maxP" min="1" max="10000">
+
+</form>
+<div *ngFor="let trim of trims" class="cardTiles">
+	
+  	  <div class="card-container">
+  	  	
+    	<div class="card card-small" tabindex="0">
+        	 
+        	Make: {{trim.make_display}} 
+            <br>Model: {{trim.model_name}}
+            <br>Trim: {{trim.model_trim}}
+            <br>Year: {{trim.model_year}}
+            <br>Body Type: {{trim.model_body}}
+            
+            <br>Engine: {{trim.model_engine_fuel}}
+            <br>Engine Volume: {{trim.model_engine_cc}} cc
+            <br>Drive: {{trim.model_drive}}
+            <br>Transmission: {{trim.model_transmission_type}}
+
+
+
+    	</div>
+    	
+    </div>
+</div>

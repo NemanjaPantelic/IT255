@@ -76,8 +76,10 @@ export class ModelsComponent implements OnInit {
 
 	this.modelForm.get('name').valueChanges.subscribe(value => {
         console.log(value);
-
         if(value != "Select make"){
+
+        	this.name = value;
+
         	if(this.modelForm.get('year').value != ''){
 
         			for(var i = 0;i<this.makes.length;i++) { 
@@ -120,8 +122,10 @@ export class ModelsComponent implements OnInit {
 
     this.modelForm.get('year').valueChanges.subscribe(value => {
         console.log(value);
+        if(value != "Select Year"){
 
-        if(value != "Select make"){
+        	this.year = value;
+
         	if(this.modelForm.get('name').value != ''){
 
         			for(var i = 0;i<this.makes.length;i++) { 
@@ -141,6 +145,22 @@ export class ModelsComponent implements OnInit {
 		              });
         				
         		}
+        	} else{
+	        	for(var i = 0;i<this.makes.length;i++) { 
+						   if(this.makes[i].make_display == value)
+						   		this.makeId = this.makes[i].make_id;
+						}
+
+						console.log(this.makeId);
+	        			
+	        			this.apiService.getModels(this.makeId).subscribe((data)=>{
+			              var dataSubstring = data.substring(2,data.length-2);
+			              var modelsRespose = JSON.parse(dataSubstring);
+
+			              this.models = modelsRespose['Models'];
+
+			              console.log(this.models);
+			              });
         	}
 
 
