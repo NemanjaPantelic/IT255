@@ -17,7 +17,8 @@ export class MakesComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.getMakes().subscribe((data)=>{
-      var dataSubstring = data.substring(2,data.length-2);
+      var dataString = <String> data;
+      var dataSubstring = dataString.substring(2,dataString.length-2);
       var makesRespose = JSON.parse(dataSubstring);
 
       this.makes = makesRespose['Makes'];
@@ -28,14 +29,16 @@ export class MakesComponent implements OnInit {
 
         if(value != null && value > 1940 && value < 2020){
             this.apiService.getMakesWYear(value).subscribe((data)=>{
-              var dataSubstring = data.substring(2,data.length-2);
+              var dataString = <String> data;
+              var dataSubstring = dataString.substring(2,dataString.length-2);
               var makesRespose = JSON.parse(dataSubstring);
 
               this.makes = makesRespose['Makes'];
               });
         } else if(value == null){
             this.apiService.getMakes().subscribe((data)=>{
-              var dataSubstring = data.substring(2,data.length-2);
+              var dataString = <String> data;
+              var dataSubstring = dataString.substring(2,dataString.length-2);
               var makesRespose = JSON.parse(dataSubstring);
 
               this.makes = makesRespose['Makes'];

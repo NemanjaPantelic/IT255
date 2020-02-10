@@ -99,7 +99,8 @@ export class TrimsComponent implements OnInit {
 	    console.log(this.model);
 
 	    this.apiService.getMakes().subscribe((data)=>{
-              var dataSubstring = data.substring(2,data.length-2);
+        var dataString = <String> data;
+              var dataSubstring = dataString.substring(2,dataString.length-2);
               var makesRespose = JSON.parse(dataSubstring);
 
               this.makes = makesRespose['Makes'];
@@ -107,7 +108,8 @@ export class TrimsComponent implements OnInit {
 
               if(this.id!= null){
                 this.apiService.getModels(this.id).subscribe((data)=>{
-  		              var dataSubstring = data.substring(2,data.length-2);
+                  var dataString = <String> data;
+  		              var dataSubstring = dataString.substring(2,dataString.length-2);
   		              var modelsRespose = JSON.parse(dataSubstring);
 
   		              this.models = modelsRespose['Models'];
@@ -115,8 +117,9 @@ export class TrimsComponent implements OnInit {
   		        });
 		       }
 
-        	     this.apiService.getTrims(this.id,this.model,this.year).subscribe((data)=>{
-                      var dataSubstring = data.substring(2,data.length-2);
+        	     this.apiService.getTrims(this.id,this.model,this.year,null,null,null,null).subscribe((data)=>{
+                       var dataString = <String> data;
+                      var dataSubstring = dataString.substring(2,dataString.length-2);
                       var makesRespose = JSON.parse(dataSubstring);
 
                       this.trims = makesRespose['Trims'];
@@ -135,7 +138,8 @@ export class TrimsComponent implements OnInit {
 
               if(this.id!= null){
                 this.apiService.getModels(this.id).subscribe((data)=>{
-                    var dataSubstring = data.substring(2,data.length-2);
+                var dataString = <String> data;
+                    var dataSubstring = dataString.substring(2,dataString.length-2);
                     var modelsRespose = JSON.parse(dataSubstring);
 
                     this.models = modelsRespose['Models'];
@@ -148,7 +152,8 @@ export class TrimsComponent implements OnInit {
               this.modelParam = null;
 
               this.apiService.getTrims(this.makeParam ,this.modelParam,this.yearParam, this.bodyParam,this.fuelParam,this.minPParam,this.maxPParam).subscribe((data)=>{
-                      var dataSubstring = data.substring(2,data.length-2);
+                      var dataString = <String> data;
+                      var dataSubstring = dataString.substring(2,dataString.length-2);
                       var makesRespose = JSON.parse(dataSubstring);
 
                       this.trims = makesRespose['Trims'];
@@ -162,7 +167,8 @@ export class TrimsComponent implements OnInit {
             this.setParams();
 
               this.apiService.getTrims(this.makeParam ,this.modelParam,this.yearParam, this.bodyParam,this.fuelParam,this.minPParam,this.maxPParam).subscribe((data)=>{
-                      var dataSubstring = data.substring(2,data.length-2);
+                      var dataString = <String> data;
+                      var dataSubstring = dataString.substring(2,dataString.length-2);
                       var makesRespose = JSON.parse(dataSubstring);
 
                       this.trims = makesRespose['Trims'];
@@ -175,7 +181,8 @@ export class TrimsComponent implements OnInit {
             this.setParams();
 
               this.apiService.getTrims(this.makeParam ,this.modelParam,this.yearParam, this.bodyParam,this.fuelParam,this.minPParam,this.maxPParam).subscribe((data)=>{
-                      var dataSubstring = data.substring(2,data.length-2);
+                      var dataString = <String> data;
+                      var dataSubstring = dataString.substring(2,dataString.length-2);
                       var makesRespose = JSON.parse(dataSubstring);
 
                       this.trims = makesRespose['Trims'];
@@ -188,7 +195,8 @@ export class TrimsComponent implements OnInit {
             this.setParams();
 
               this.apiService.getTrims(this.makeParam ,this.modelParam,this.yearParam, this.bodyParam,this.fuelParam,this.minPParam,this.maxPParam).subscribe((data)=>{
-                      var dataSubstring = data.substring(2,data.length-2);
+                       var dataString = <String> data;
+                      var dataSubstring = dataString.substring(2,dataString.length-2);
                       var makesRespose = JSON.parse(dataSubstring);
 
                       this.trims = makesRespose['Trims'];
@@ -201,7 +209,8 @@ export class TrimsComponent implements OnInit {
             this.setParams();
 
               this.apiService.getTrims(this.makeParam ,this.modelParam,this.yearParam, this.bodyParam,this.fuelParam,this.minPParam,this.maxPParam).subscribe((data)=>{
-                      var dataSubstring = data.substring(2,data.length-2);
+                      var dataString = <String> data;
+                      var dataSubstring = dataString.substring(2,dataString.length-2);
                       var makesRespose = JSON.parse(dataSubstring);
 
                       this.trims = makesRespose['Trims'];
@@ -214,7 +223,8 @@ export class TrimsComponent implements OnInit {
             this.setParams();
 
               this.apiService.getTrims(this.makeParam ,this.modelParam,this.yearParam, this.bodyParam,this.fuelParam,this.minPParam,this.maxPParam).subscribe((data)=>{
-                      var dataSubstring = data.substring(2,data.length-2);
+                       var dataString = <String> data;
+                      var dataSubstring = dataString.substring(2,dataString.length-2);
                       var makesRespose = JSON.parse(dataSubstring);
 
                       this.trims = makesRespose['Trims'];
@@ -227,7 +237,8 @@ export class TrimsComponent implements OnInit {
             this.setParams();
 
               this.apiService.getTrims(this.makeParam ,this.modelParam,this.yearParam, this.bodyParam,this.fuelParam,this.minPParam,this.maxPParam).subscribe((data)=>{
-                      var dataSubstring = data.substring(2,data.length-2);
+                      var dataString = <String> data;
+                      var dataSubstring = dataString.substring(2,dataString.length-2);
                       var makesRespose = JSON.parse(dataSubstring);
 
                       this.trims = makesRespose['Trims'];

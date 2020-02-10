@@ -46,7 +46,8 @@ export class ModelsComponent implements OnInit {
 	    this.modelForm.get('name').setValue(this.name);
 
 	    this.apiService.getMakes().subscribe((data)=>{
-              var dataSubstring = data.substring(2,data.length-2);
+	    		var dataString = <String> data;
+              var dataSubstring = dataString.substring(2,dataString.length-2);
               var makesRespose = JSON.parse(dataSubstring);
 
               this.makes = makesRespose['Makes'];
@@ -54,7 +55,8 @@ export class ModelsComponent implements OnInit {
 
 	    if(this.year == null){
 	    	this.apiService.getModels(this.id).subscribe((data)=>{
-              var dataSubstring = data.substring(2,data.length-2);
+	    	var dataString = <String> data;
+              var dataSubstring = dataString.substring(2,dataString.length-2);
               var modelsRespose = JSON.parse(dataSubstring);
 
               this.models = modelsRespose['Models'];
@@ -64,7 +66,8 @@ export class ModelsComponent implements OnInit {
 	    }
 	    else{
 	    	this.apiService.getModelsWYear(this.id, this.year).subscribe((data)=>{
-              var dataSubstring = data.substring(2,data.length-2);
+	    	var dataString = <String> data;
+              var dataSubstring = dataString.substring(2,dataString.length-2);
               var modelsRespose = JSON.parse(dataSubstring);
 
               this.models = modelsRespose['Models'];
@@ -90,7 +93,8 @@ export class ModelsComponent implements OnInit {
 					console.log(this.makeId);
         			
         			this.apiService.getModelsWYear(this.makeId, this.modelForm.get('year').value).subscribe((data)=>{
-		              var dataSubstring = data.substring(2,data.length-2);
+		              var dataString = <String> data;
+		              var dataSubstring = dataString.substring(2,dataString.length-2);
 		              var modelsRespose = JSON.parse(dataSubstring);
 
 		              this.models = modelsRespose['Models'];
@@ -108,7 +112,8 @@ export class ModelsComponent implements OnInit {
 					console.log(this.makeId);
         			
         			this.apiService.getModels(this.makeId).subscribe((data)=>{
-		              var dataSubstring = data.substring(2,data.length-2);
+        			var dataString = <String> data;
+		              var dataSubstring = dataString.substring(2,dataString.length-2);
 		              var modelsRespose = JSON.parse(dataSubstring);
 
 		              this.models = modelsRespose['Models'];
@@ -136,7 +141,8 @@ export class ModelsComponent implements OnInit {
 					console.log(this.makeId);
         			
         			this.apiService.getModelsWYear(this.makeId, this.modelForm.get('year').value).subscribe((data)=>{
-		              var dataSubstring = data.substring(2,data.length-2);
+		              var dataString = <String> data;
+		              var dataSubstring = dataString.substring(2,dataString.length-2);
 		              var modelsRespose = JSON.parse(dataSubstring);
 
 		              this.models = modelsRespose['Models'];
@@ -154,7 +160,8 @@ export class ModelsComponent implements OnInit {
 						console.log(this.makeId);
 	        			
 	        			this.apiService.getModels(this.makeId).subscribe((data)=>{
-			              var dataSubstring = data.substring(2,data.length-2);
+	        				var dataString = <String> data;
+			              var dataSubstring = dataString.substring(2,dataString.length-2);
 			              var modelsRespose = JSON.parse(dataSubstring);
 
 			              this.models = modelsRespose['Models'];
